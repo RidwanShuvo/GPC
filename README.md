@@ -138,7 +138,10 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 
 ---
 
-## Flowcharts
+## Flowcharts 
+
+
+
 
 
 
@@ -157,7 +160,7 @@ public class GCPCipher {
         for (int x = 1; x < m; x++) {
             if ((a * x) % m == 1) return x;
         }
-        return -1;
+        return -1; // No inverse exists
     }
 
     static int charToIndex(char c) {
@@ -171,22 +174,27 @@ public class GCPCipher {
     static String encrypt(String plaintext, int a) {
         StringBuilder ciphertext = new StringBuilder();
         plaintext = plaintext.toUpperCase();
+
         for (int i = 0; i < plaintext.length(); i++) {
             int index = charToIndex(plaintext.charAt(i));
-            int cipherIndex = (a * (index + i + 26)) % 26;
+            int cipherIndex = (a * (index + i)) % 26;
             ciphertext.append(indexToChar(cipherIndex));
         }
+
         return ciphertext.toString();
     }
 
     static String decrypt(String ciphertext, int a) {
         StringBuilder plaintext = new StringBuilder();
         int a_inv = modInverse(a, 26);
+        if (a_inv == -1) throw new IllegalArgumentException("Key has no modular inverse!");
+
         for (int i = 0; i < ciphertext.length(); i++) {
             int index = charToIndex(ciphertext.charAt(i));
-            int plainIndex = (a_inv * index - i + 52) % 26;
+            int plainIndex = ((a_inv * index) - i + 26) % 26;
             plaintext.append(indexToChar(plainIndex));
         }
+
         return plaintext.toString();
     }
 
@@ -195,10 +203,12 @@ public class GCPCipher {
         int key = 7;
         String encrypted = encrypt(text, key);
         String decrypted = decrypt(encrypted, key);
+
         System.out.println("Original: " + text);
         System.out.println("Encrypted: " + encrypted);
         System.out.println("Decrypted: " + decrypted);
     }
 }
+
 
 
