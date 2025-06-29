@@ -8,7 +8,7 @@
 
 ---
 
-<h2 align="center" style="color:#16a085;"><strong>📘 Course Information</strong></h2>
+<h2 align="center" style="color:#16a085;"><strong> Course Information</strong></h2>
 
 <p align="center">
   <strong>Course Title:</strong> Mathematical Analysis for Computer Science  
@@ -18,7 +18,7 @@
 
 ---
 
-<h2 align="center" style="color:#2980b9;"><strong>🧠 Algorithm Name</strong></h2>
+<h2 align="center" style="color:#2980b9;"><strong> Algorithm Name</strong></h2>
 
 <h1 align="center" style="color:#8e44ad;"><strong>🔐 GCP Cipher</strong></h1>
 
@@ -141,7 +141,7 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 ## Flowcharts 
 
 
-
+![Encryption and Decryption Flowcharts](/flowchart.png)
 
 
 
