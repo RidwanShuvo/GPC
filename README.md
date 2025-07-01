@@ -53,9 +53,9 @@
 
 ---
 
-# 🧠 Algorithm Description
+#  Algorithm Description
 
-## 🔐 Algorithm Name: **GCP Cipher**  
+##  Algorithm Name: **GCP Cipher**  
 **(GCD-Controlled Position-based Cipher)**
 
 This is a custom cryptographic algorithm based on:
@@ -67,15 +67,15 @@ This is a custom cryptographic algorithm based on:
 ---
 
 
-## 🔢 Table of Contents
-- [🔐 Encryption Algorithm](#-encryption-algorithm)
-- [🔓 Decryption Algorithm](#-decryption-algorithm)
-- [🧪 Example Test Case](#-example-test-case)
-- [📈 Flowcharts](#-flowcharts)
-- [💻 Java Source Code](#-java-source-code)
+## Table of Contents
+- [ Encryption Algorithm](#-encryption-algorithm)
+- [ Decryption Algorithm](#-decryption-algorithm)
+- [ Example Test Case](#-example-test-case)
+- [ Flowcharts](#-flowcharts)
+- [ Java Source Code](#-java-source-code)
 
 ---
-# 🔐 Encryption Algorithm
+# Encryption Algorithm
 
 Let:  
 - `a` be a multiplicative key such that `gcd(a, 26) = 1`  
@@ -88,7 +88,7 @@ Let:
 E[i] = {a × (P[i] + pos)} mod 26
 
 ```
-## 🔓 Decryption Algorithm
+##  Decryption Algorithm
 
 ### Decryption Formula:
 - `a⁻¹` = Modular inverse of `a` modulo 26  
@@ -105,7 +105,7 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 
 ---
 
-## 🧪 Example Test Case
+## Example Test Case
 
 **Plaintext:** `HELLO`  
 **Key (a):** 7 (coprime with 26)  
@@ -121,7 +121,7 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 | 3   | L    | 11     | {7×(11+3)} % 26 = 20| U             |
 | 4   | O    | 14     | {7×(14+4)} % 26 = 22| W              |
 
-🔐 **Ciphertext:** `XJNUW`
+**Ciphertext:** `XJNUW`
 
 ### Step-by-step Decryption:
 
@@ -133,7 +133,7 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 | 3   | U    | 20     | {(15×20)- 3 + 26} %26=11 | L              |
 | 4   | W    | 22     | ({15×22)- 4 + 26} %26=14 | O              |
 
-✅ **Decrypted Text:** `HELLO`
+ **Decrypted Text:** `HELLO`
 
 
 ---
@@ -151,7 +151,7 @@ D[i] = {(a⁻¹ × E[i]) - pos + 26} mod 26
 
 
 
-## 💻 Java Source Code
+##  Java Source Code
 
 ```java
 public class GCPCipher {
